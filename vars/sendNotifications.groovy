@@ -25,15 +25,9 @@ def call(String buildStatus = 'STARTED') {
     colorCode = '#FF0000'
   }
 
-  // Send notifications
-  slackSend (color: colorCode, message: summary)
-
-  hipchatSend (color: color, notify: true, message: summary)
-
   emailext (
-      to: 'bitwiseman@bitwiseman.com',
+      to: 'infantraju123@gmail.com',
       subject: subject,
-      body: details,
-      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+      body: details
     )
 }
